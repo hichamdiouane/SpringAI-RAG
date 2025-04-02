@@ -20,13 +20,17 @@ import java.util.List;
 public class RagDataLoader {
     @Value("classpath:/pdfs/cv.pdf")
     private Resource pdfResource;
-    @Value("store-data-v1.json")
-    private String storefile;
+    // for ollama
+//    @Value("store-data-v1.json")
+//    private String storefile1;
+    // for openai
+    @Value("store-data-v2.json")
+    private String storefile2;
 
     @Bean
     public SimpleVectorStore simpleVectorStore(EmbeddingModel embeddingModel){
         SimpleVectorStore simpleVectorStore = SimpleVectorStore.builder(embeddingModel).build();
-        String fileStore = Path.of("src", "main", "resources", "store").toAbsolutePath()+"/"+storefile;
+        String fileStore = Path.of("src", "main", "resources", "store").toAbsolutePath()+"/"+storefile2;
         File file = new File(fileStore);
         if(!file.exists()) {
             PagePdfDocumentReader pagePdfDocumentReader = new PagePdfDocumentReader(pdfResource);
