@@ -28,11 +28,15 @@ public class ChatAIService {
 
     public String ragChat(String question) {
         List<Document> documents = vectorStore.similaritySearch(question);
-        List<String> context = documents.stream().map(Document::toString).toList();
+        // Use Document::getText instead
+        List<String> context = documents.stream()
+                .map(Document::getText)
+                .toList();
+
         PromptTemplate promptTemplate = new PromptTemplate(promptResource);
         Prompt prompt = promptTemplate.create(Map.of("context", context, "question", question));
+
         return chatClient.prompt(prompt)
-                .user(question)
                 .call()
                 .content();
     }
