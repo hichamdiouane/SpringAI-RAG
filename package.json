@@ -27,7 +27,8 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-markdown": "^10.1.0",
-    "react-router": "7.2.0"
+    "react-router": "7.2.0",
+    "react-router-dom": "^7.5.0"
   },
   "devDependencies": {
     "@babel/preset-react": "7.26.3",
@@ -120,7 +121,7 @@
       "workbox-core": "7.3.0",
       "workbox-precaching": "7.3.0"
     },
-    "hash": "1bda498f157bd0a079e13d2476dfc363063c353d7f3f04a95f89c940837afe88"
+    "hash": "1ccaecdc5ed879fffedb1ef9703283a749036c3e0c946d03d83aaa56cd55c118"
   },
   "overrides": {
     "@vaadin/bundles": "$@vaadin/bundles",
@@ -147,6 +148,7 @@
     "@vaadin/vaadin-themable-mixin": "$@vaadin/vaadin-themable-mixin",
     "@vaadin/vaadin-lumo-styles": "$@vaadin/vaadin-lumo-styles",
     "@vaadin/vaadin-material-styles": "$@vaadin/vaadin-material-styles",
-    "react-markdown": "$react-markdown"
+    "react-markdown": "$react-markdown",
+    "react-router-dom": "$react-router-dom"
   }
 }
